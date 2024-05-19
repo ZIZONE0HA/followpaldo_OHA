@@ -34,13 +34,13 @@ public class CampListController {
 	@Autowired
 	private CampListService campListService;
 	
-	//DB에 캠핑장 정보 저장 최초1회만 실행하고 실행하지 않음
+	
 	@RequestMapping("/save")
 	public void saveCampList() {
         String result = "";
         
         try {
-        	int totalPage = 380; //전체 페이지 수 (전체 컨텐츠 수 :3796)
+        	int totalPage = 380; 
         	int pageSize = 10;
         	
         	for(int pageNo=1; pageNo<=totalPage;pageNo++) {
@@ -90,52 +90,49 @@ public class CampListController {
 	    }
      }
 	
-	//캠핑장 정보 리스트 불러오기
+
     @RequestMapping("/CampList/{regin}")
     public String callCampList(@RequestParam(value="page",defaultValue="1") int page,
     		@PathVariable("regin") String region, Model model) {
     	
-    	//메인페이지의 지역값을 가져와서 doNm으로 변경
+   
     	String doNm = campListService.getDoNm(region);
     	
     	
-    	//한 페이지의 데이터 출력 갯수
+    
     	int limit = 10;
     	
-    	//mySQL 에서 limit 를 사용하여 쿼리를 구하기 위해 작성
+    	
     	int start = (page - 1) * limit;
     	
-    	//CampListVO DTO 를 생성하여 검색하고자 하는 doNm과 
-    	//mySQL의 limit를 사용하기 위한 변수 전달
-    	//★ 굳이 DTO를 생성해서 변수를 전달하는 이유 : mapper.xml 파일의 파라미터값과 result 값은 하나이기 때문에 
-    	//									 쿼리문을 작성하기 위한 변수가 두개 이상일때는 DTO객체로 싸잡아서 보내야한다
+
     	
-    	//doNm과 start 정보를 담은 DTO camp 생성
+  
     	CampListVO camp = new CampListVO();
     	camp.setDoNm(doNm);
     	camp.setStart(start);
     	
-    	//조건에 맞는 doNm을 가진 캠핑장 수 
+    
     	int listCount = campListService.getListCount(camp);
     	System.out.println("listCount:"+ listCount);
     	
-    	//페이징 처리로 출력될 총 페이지 수 
+ 
     	int maxpage = listCount / limit + ((listCount % limit ==0)? 0 : 1);
     	
-    	//블럭이 10개 단위일 때 페이징의 첫단추 넘버
+   
     	int startpage = ((page-1)/10)*limit+1;
     	
-    	//블럭이 10개 단위일 때 페이징의 마지막 단추
+    
     	int endpage = startpage+10-1;
     	
-    	//마지막 단추가 총페이징 수 보다 크다면 마지막 단추를 총 페이징 수로 바꾼다
+    	
     	if(endpage > maxpage)
     		endpage = maxpage;
     	
-    	//리스트 생성
+    
     	List<CampListVO> campList = new ArrayList<CampListVO>();
     	
-    	//생성한 리스트에 callList를 통해 값 검색한 지역의 값 받아오기
+    
     	campList = campListService.callCampList(camp);
     	
     	//jsp 단에 값 넘겨주기
@@ -151,7 +148,7 @@ public class CampListController {
     }
 	
     
-	//찜하기
+
 	@PostMapping("/zzim")
 	@ResponseBody
 	public ResponseEntity<Integer> zzimClick(@RequestBody CampListZzimVO zzimVO,
