@@ -39,8 +39,8 @@
 			<div id="login_menu">
 				<input type="submit" value="로그인" class="input_button"/>
 				<div id="kakao_login" class="input_button">
-					<a class="kakao_login_a" href="카카오 연동링크">
-						<img src="../image/KakaoTalk_icon.png">
+					<a class="kakao_login_a" href="https://kauth.kakao.com/oauth/authorize?client_id=59c7a8dc4caff6501f3bf846c82a34b5&redirect_uri=http://localhost/kakaoLogin&response_type=code&prompt=select_account">
+						<img class = "kakaoSimbol" src="../image/KakaoTalk_icon.png">
 						<span>카카오 로그인</span>
 					</a>
 				</div>

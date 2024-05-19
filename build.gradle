@@ -26,7 +26,7 @@ dependencies {
 
      compileOnly group: 'jakarta.servlet.jsp', name: 'jakarta.servlet.jsp-api', version: '3.1.1'
      implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '2.0.0'
-
+		implementation 'com.google.code.gson:gson:2.8.5'
      compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
     implementation 'jakarta.el:jakarta.el-api:5.0.1'
     	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'	

@@ -16,7 +16,7 @@
 
 	<!-- id중복검사  -->
 	<select id="user_id_check" parameterType="String" resultType="int">
-    	select count(*) from member where user_id = #{userId};
+    	select count(*) from member where user_id = #{userId}
     </select>
     
 	<!-- 로그인 인증-->
@@ -27,11 +27,55 @@
     <!-- 회원수정 -->
     <select id="member_edit_go" parameterType="member" >
     	update member set user_pw=#{userPw},user_phone=#{userPhone},user_name=#{userName},
-    	user_jumin=#{userJumin},user_email=#{userEmail},user_gender=#{userGender},kakao=0 where user_id=#{userId}
+    	user_jumin=#{userJumin},user_email=#{userEmail},user_gender=#{userGender} where user_id=#{userId}
     </select>
     
     <!-- 회원삭제 -->
 	<select id="member_delete_go" parameterType="String">
 		delete from member where user_id=#{userId}
+	</select>
+	
+	<!-- 카카오 간편로그인을 위한 select문 -->
+	<select id = "selectKakao" parameterType = "String" resultType = "Integer">
+		select kakao from member where user_email = #{kakaoEmail}
+	</select>
+	
+	<!-- 카카오 연동&간편로그인을 위한 select문 -->
+	<select id = "selectEmail" parameterType = "String" resultType = "String">
+		select user_email from member where user_email = #{kakaoEmail}     
+	</select>
+	
+	<!-- kakao 인증 업데이트 -->
+	<update id = "updateKakao" parameterType = "String">
+		update member set kakao = 1 where user_email = #{kakaoEmail}
+	</update>
+	
+	<!-- 간편 로그인에서 user_id값을 받아오기 위한 select 문 -->
+	<select id = "selectUser_id" parameterType = "String" resultType = "String" >
+		select user_id from member where user_email = #{kakaoEmail}
+	</select>
+	
+	<!-- 로그인한 유저의 찜목록 수 -->
+	<select id = "countZzimList" resultType = "Integer">
+		<![CDATA[
+        	select count(*)
+        	from zzim z
+        	inner join camping c on z.content_id = c.content_id
+        	WHERE z.user_id = #{userId}
+        ]]>
+	</select>
+	
+	<!-- 찜목록 데이터 가져오기 -->	
+	<select id = "getZzimList"  parameterType="Map"   resultType = "jjon.gangsan.model.ZzimList">
+		<![CDATA[
+        	SELECT z.zzim_no, 
+            	   c.first_image_url, c.faclt_nm, c.doNm,
+              	   c.addr1, c.tel, c.homepage, c.induty, c.ict_cl, c.intro
+	        FROM camping c
+	        JOIN zzim z ON c.content_id = z.content_id
+	        WHERE z.user_id = #{userId}
+	        order by z.zzim_no desc
+        	limit #{start}, 10
+        ]]>
 	</select>
 </mapper>

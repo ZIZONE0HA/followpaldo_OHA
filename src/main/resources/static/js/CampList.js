@@ -8,7 +8,7 @@ function check(contentId){
 	//json 형태로 컨트롤러에 정보를 넘겨주기 위해 json 형태로 데이터값을 받는다
 	 var formData = {
           	contentId : contentId, //버튼 매개변수의 contentId값
-        	userId : "${sessionScope.id}" //'${sessionScope.id}' //로그인시 생성한 세션의 id값
+        	//userId : "${sessionScope.id}" //'${sessionScope.id}' //로그인시 생성한 세션의 id값
           }
      
      $.ajax({

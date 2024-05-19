@@ -15,12 +15,12 @@
         <div class="head">
             <div class="headinner">
                 <div class="logo">
-                    <a href="../views/MainPage.jsp" class="logo">
+                    <a href="../views" class="logo">
                         <img src="./image/Follow8°_white.svg" class="logo">
                     </a>
                 </div>
                 <div class="profile">
-                    <a href="../views/MyPage.jsp">
+                    <a href="member_mypage">
                         <img src="./image/profile.svg" class="profile">
                     </a>
                 </div> 
@@ -79,7 +79,7 @@
                                <button class="btn2" onclick="location.href='member_edit'">회원수정</button>
                                <button class="btn3" onclick="location.href='member_delete'">회원탈퇴</button>
                                <button class="btn4" onclick="location.href='member_zzim'">찜목록</button>
-                               <div class="btn6"><img src="./image/kakako_simbol.png" class="kakaoimg">kakao 연동 중</div>
+                               <div class="btn6"><img src="./image/kakao_simbol.png" class="kakaoimg">kakao 연동 중</div>
                             </div>   
 	                    </div> 
 	                </div>

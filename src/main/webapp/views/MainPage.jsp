@@ -27,7 +27,7 @@
 					</a>
 				</div>
 				<div class="profile">
-					<a href="../views/MyPage"> <img src="/image/profile.svg"
+					<a href="member_mypage"> <img src="/image/profile.svg"
 						class="profile">
 					</a>
 				</div>

@@ -1,24 +1,30 @@
 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_2567_131" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
+<mask id="mask0_2567_129" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
 <circle cx="25" cy="25" r="25" fill="white"/>
 </mask>
-<g mask="url(#mask0_2567_131)">
-<g filter="url(#filter0_d_2567_131)">
+<g mask="url(#mask0_2567_129)">
+<g filter="url(#filter0_d_2567_129)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M33.1085 28.4074C35.1857 26.3314 36.4706 23.4628 36.4706 20.294C36.4706 13.959 31.3351 8.82344 25 8.82344C18.665 8.82344 13.5294 13.959 13.5294 20.294C13.5294 23.5439 14.881 26.4782 17.0527 28.5653C8.78622 31.7164 2.94116 39.4673 2.94116 48.5295C2.94116 60.3873 12.9489 70.0001 25.2941 70.0001C37.6393 70.0001 47.647 60.3873 47.647 48.5295C47.647 39.312 41.6 31.4512 33.1085 28.4074Z" fill="#DDE2E3"/>
 </g>
 <circle cx="27.6471" cy="17.6472" r="0.588235" fill="#333333"/>
 <circle cx="22.353" cy="17.6472" r="0.588235" fill="#333333"/>
 </g>
+<circle cx="25" cy="25" r="24.5" stroke="#333333"/>
+<path d="M22 23L25.5 24L29 22" stroke="#333333" stroke-linecap="round"/>
+<rect x="18" y="15" width="7" height="6" rx="2" fill="#333333"/>
+<rect x="25" y="15" width="7" height="6" rx="2" fill="#333333"/>
+<path d="M18.902 18.4903L13.902 17.4903" stroke="#333333" stroke-linecap="round"/>
+<path d="M36 17L31 18" stroke="#333333" stroke-linecap="round"/>
 <defs>
-<filter id="filter0_d_2567_131" x="-1.05884" y="8.82344" width="52.7059" height="69.1766" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_2567_129" x="-1.05884" y="8.82344" width="52.7059" height="69.1766" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
 <feGaussianBlur stdDeviation="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2567_131"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2567_131" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2567_129"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2567_129" result="shape"/>
 </filter>
 </defs>
 </svg>
